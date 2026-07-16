@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasprava · Sila i gibanje | Loren Trstenjak</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="topnav">
+    <a class="nav-logo" href="index.html">Sila i gibanje</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Motivacija</a></li>
+      <li><a href="pokus.html">Pokus</a></li>
+      <li><a href="rasprava.html" class="active">Rasprava</a></li>
+      <li><a href="kviz.html">Kviz</a></li>
+      <li><a href="tekst-i-linkovi.html">Tekst</a></li>
+      <li><a href="pojmovnik.html">Pojmovnik</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <span class="hero-eyebrow">Sila i gibanje · Rasprava</span>
+    <h1>Provjeri svoje pretpostavke</h1>
+    <p class="hero-desc">
+      Odaberi odgovor na svako pitanje - odmah ćeš dobiti povratnu informaciju zašto je odgovor točan ili netočan.
+    </p>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-title">Sila i gibanje</div>
+      <ul>
+        <li><a href="index.html">1. Motivacija</a></li>
+        <li><a href="pokus.html">2. Pokus</a></li>
+        <li><a href="rasprava.html" class="active">3. Rasprava</a></li>
+        <li><a href="kviz.html">4. Kviz znanja</a></li>
+        <li><a href="tekst-i-linkovi.html">5. Tekst i linkovi</a></li>
+        <li><a href="pojmovnik.html">6. Pojmovnik</a></li>
+      </ul>
+      <div class="divider"></div>
+      <ul>
+        <!-- TODO: prilagodi ove linkove kad postaviš glavnu GitHub stranicu -->
+        <li><a href="../index.html">← Sve lekcije</a></li>
+        <li><a href="../pojmovnik.html">Opći pojmovnik</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <div class="section-header">
+        <span class="section-label">01</span>
+        <h2 class="section-title">Pitanja za raspravu</h2>
+      </div>
+
+      <div class="card">
+
+        <div class="question-block">
+          <p class="question-text">1. Ako iz ruke istovremeno ispustiš kamen i list papira (ravan, nezgužvan), što će se dogoditi?</p>
+          <label class="answer-option"><input type="radio" name="q1" onclick="odaberi('q1','a')"> Kamen će prije udariti tlo jer je teži, a teža tijela padaju brže.</label>
+          <label class="answer-option"><input type="radio" name="q1" onclick="odaberi('q1','b')"> Kamen će prije udariti tlo, ali zbog otpora zraka koji jače usporava lakši, veći papir - ne zbog razlike u masi.</label>
+          <label class="answer-option"><input type="radio" name="q1" onclick="odaberi('q1','c')"> Oba će udariti tlo u istom trenutku jer sila teža jednako djeluje na sva tijela.</label>
+          <div id="q1-a" class="feedback incorrect">Nije sasvim točno. Sama masa ne uzrokuje brže padanje - u prostoru bez zraka oba tijela padaju jednako brzo.</div>
+          <div id="q1-b" class="feedback correct">Točno! Otpor zraka je taj koji papir usporava puno više nego kamen, zbog njegovog oblika i male mase u odnosu na površinu.</div>
+          <div id="q1-c" class="feedback incorrect">To bi vrijedilo u vakuumu (bez zraka), ali ovdje zrak stvara otpor koji papir znatno usporava.</div>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">2. Loptica se otkotrlja po savršeno glatkom, ravnom podu bez trenja, i na nju više ne djeluje nikakva sila. Što će se dogoditi?</p>
+          <label class="answer-option"><input type="radio" name="q2" onclick="odaberi('q2','a')"> Usporit će i sama od sebe stati.</label>
+          <label class="answer-option"><input type="radio" name="q2" onclick="odaberi('q2','b')"> Nastavit će se gibati jednoliko, istom brzinom i u istom smjeru.</label>
+          <label class="answer-option"><input type="radio" name="q2" onclick="odaberi('q2','c')"> Počet će se sama ubrzavati.</label>
+          <div id="q2-a" class="feedback incorrect">Netočno - bez djelovanja sile tijelo ne usporava samo od sebe. To je čest, ali pogrešan dojam iz svakodnevice, gdje uvijek postoji trenje.</div>
+          <div id="q2-b" class="feedback correct">Točno! Zbog tromosti tijelo bez djelovanja sile zadržava svoje stanje gibanja.</div>
+          <div id="q2-c" class="feedback incorrect">Netočno - bez sile ne može doći do ubrzanja, samo do jednolikog gibanja.</div>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">3. Guraš jednakom silom dvije kutije na kolicima - jednu praznu, jednu punu knjiga. Koja će dobiti veće ubrzanje?</p>
+          <label class="answer-option"><input type="radio" name="q3" onclick="odaberi('q3','a')"> Puna kutija, jer ima veću masu.</label>
+          <label class="answer-option"><input type="radio" name="q3" onclick="odaberi('q3','b')"> Prazna kutija, jer ima manju masu pa joj ista sila daje veće ubrzanje.</label>
+          <label class="answer-option"><input type="radio" name="q3" onclick="odaberi('q3','c')"> Obje jednako, jer je sila kojom guraš ista.</label>
+          <div id="q3-a" class="feedback incorrect">Upravo suprotno - veća masa znači manje ubrzanje pri istoj sili.</div>
+          <div id="q3-b" class="feedback correct">Točno! Uz istu silu, manja masa daje veće ubrzanje.</div>
+          <div id="q3-c" class="feedback incorrect">Ne zaboravi - osim sile, na ubrzanje utječe i masa tijela.</div>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">4. Autobus naglo zakoči. Putnici koji stoje nagnu se prema naprijed. Zašto?</p>
+          <label class="answer-option"><input type="radio" name="q4" onclick="odaberi('q4','a')"> Nevidljiva sila ih gura naprijed.</label>
+          <label class="answer-option"><input type="radio" name="q4" onclick="odaberi('q4','b')"> Zbog tromosti - tijelo putnika nastoji zadržati brzinu kojom se prije kretalo, dok autobus usporava.</label>
+          <label class="answer-option"><input type="radio" name="q4" onclick="odaberi('q4','c')"> Zrak u autobusu ih gura naprijed.</label>
+          <div id="q4-a" class="feedback incorrect">Ne postoji takva sila - riječ je o tromosti, a ne o guranju.</div>
+          <div id="q4-b" class="feedback correct">Točno! To je klasičan primjer tromosti - zato se u autu vežemo sigurnosnim pojasom.</div>
+          <div id="q4-c" class="feedback incorrect">Zrak u ovom slučaju nema značajan utjecaj na to gibanje.</div>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">5. Kuglicu pustiš niz nakošeni stolić - jednom uz mali nagib, jednom uz veći. Kada će kuglica imati veće ubrzanje?</p>
+          <label class="answer-option"><input type="radio" name="q5" onclick="odaberi('q5','a')"> Uz veći nagib, jer je dio sile teže koji je gura niz kosinu veći.</label>
+          <label class="answer-option"><input type="radio" name="q5" onclick="odaberi('q5','b')"> Uz manji nagib, jer se kuglica kreće duže vrijeme.</label>
+          <label class="answer-option"><input type="radio" name="q5" onclick="odaberi('q5','c')"> Nagib uopće ne utječe na ubrzanje, samo na duljinu puta.</label>
+          <div id="q5-a" class="feedback correct">Točno! Što je kosina strmija, veći je dio sile teže koji djeluje duž kosine, pa je i ubrzanje veće - baš kao u našem pokusu.</div>
+          <div id="q5-b" class="feedback incorrect">Dulje vrijeme gibanja ne znači veće ubrzanje - bitno je koliko brzo se mijenja brzina.</div>
+          <div id="q5-c" class="feedback incorrect">Nagib itekako utječe na ubrzanje - to smo vidjeli i u pokusu s kuglicom.</div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Loren Trstenjak · Multimedijske prezentacije
+  </footer>
+
+  <script>
+    function odaberi(pitanje, odgovor) {
+      var svi = document.querySelectorAll('[id^="' + pitanje + '-"]');
+      svi.forEach(function (el) { el.classList.remove('show'); });
+      var odabrani = document.getElementById(pitanje + '-' + odgovor);
+      if (odabrani) {
+        odabrani.classList.add('show');
+        odabrani.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+</body>
+</html>
