@@ -23,7 +23,7 @@
     <span class="hero-eyebrow">Sila i gibanje · Kviz znanja</span>
     <h1>Provjeri koliko si naučio/naučila</h1>
     <p class="hero-desc">
-      10 pitanja - dopuni rečenice ili zaokruži točan odgovor. Na kraju dobivaš ocjenu.
+      11 pitanja. Dopuni rečenice, zaokruži točan odgovor ili izračunaj traženu vrijednost. Na kraju dobivaš ocjenu.
     </p>
   </div>
 
@@ -35,6 +35,152 @@
         <li><a href="pokus.html">2. Pokus</a></li>
         <li><a href="rasprava.html">3. Rasprava</a></li>
         <li><a href="kviz.html" class="active">4. Kviz znanja</a></li>
+        <li><a href="tekst-i-linkovi.html">5. Tekst i linkovi</a></li>
+        <li><a href="pojmovnik.html">6. Pojmovnik</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <div class="section-header">
+        <span class="section-label">01</span>
+        <h2 class="section-title">Kviz</h2>
+      </div>
+
+      <div class="card">
+
+        <div class="question-block">
+          <p class="question-text">1. Dopuni: Sila je uzrok promjene ______.</p>
+          <input type="text" class="fill-input" id="q1-input" placeholder="upiši odgovor" />
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">2. Koja je mjerna jedinica za silu?</p>
+          <label class="answer-option"><input type="radio" name="q2" value="a"> njutn (N)</label>
+          <label class="answer-option"><input type="radio" name="q2" value="b"> kilogram</label>
+          <label class="answer-option"><input type="radio" name="q2" value="c"> metar u sekundi</label>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">3. Dopuni: Tijelo koje se opire promjeni svog stanja gibanja ima svojstvo koje nazivamo ______.</p>
+          <input type="text" class="fill-input" id="q3-input" placeholder="upiši odgovor" />
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">4. Ubrzanje kod slobodnog pada iznosi približno:</p>
+          <label class="answer-option"><input type="radio" name="q4" value="a"> 5 m/s²</label>
+          <label class="answer-option"><input type="radio" name="q4" value="b"> 20 m/s²</label>
+          <label class="answer-option"><input type="radio" name="q4" value="c"> 9,8 m/s²</label>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">5. Dopuni: Kada se brzina tijela jednako povećava u jednakim vremenskim razmacima, riječ je o jednoliko ______ gibanju.</p>
+          <input type="text" class="fill-input" id="q5-input" placeholder="upiši odgovor" />
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">6. Ako masa tijela poraste, a sila ostane ista, ubrzanje će:</p>
+          <label class="answer-option"><input type="radio" name="q6" value="a"> porasti</label>
+          <label class="answer-option"><input type="radio" name="q6" value="b"> ostati isto</label>
+          <label class="answer-option"><input type="radio" name="q6" value="c"> smanjiti se</label>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">7. Dopuni: Gibanje kojim tijelo pada prema tlu samo pod utjecajem sile teže naziva se slobodni ______.</p>
+          <input type="text" class="fill-input" id="q7-input" placeholder="upiši odgovor" />
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">8. Zašto papir sporije pada od kamena kad ih zajedno ispustimo?</p>
+          <label class="answer-option"><input type="radio" name="q8" value="a"> Papir uopće nema masu.</label>
+          <label class="answer-option"><input type="radio" name="q8" value="b"> Zrak jače usporava papir zbog njegova oblika i male mase.</label>
+          <label class="answer-option"><input type="radio" name="q8" value="c"> Papir ima manju silu teže po jedinici mase.</label>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">9. Dopuni: Fizička veličina koja opisuje koliko brzo se mijenja brzina tijela zove se ______.</p>
+          <input type="text" class="fill-input" id="q9-input" placeholder="upiši odgovor" />
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">10. Kad autobus naglo krene s mjesta, putnici koji stoje nagnu se:</p>
+          <label class="answer-option"><input type="radio" name="q10" value="a"> naprijed</label>
+          <label class="answer-option"><input type="radio" name="q10" value="b"> unazad</label>
+          <label class="answer-option"><input type="radio" name="q10" value="c"> ne naginju se</label>
+        </div>
+
+        <div class="question-block">
+          <p class="question-text">11. U prvom dijelu pokusa kuglica je prešla put s = 33 cm za vrijeme t = 0,48 s. Izračunaj akceleraciju kuglice pomoću formule s = ½at² (2 s.f.). Odgovor upiši u m/s².</p>
+          <input type="text" class="fill-input" id="q11-input" placeholder="npr. 2,9" />
+        </div>
+
+        <button class="btn" onclick="provjeriKviz()">Provjeri kviz</button>
+
+        <div id="rezultat" class="quiz-result">
+          <div>Tvoj rezultat: <span class="broj-bodova">0 / 11</span></div>
+          <div class="grade">.</div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    © 2026 Loren Trstenjak · Multimedijske prezentacije
+  </footer>
+
+  <script>
+    function provjeriKviz() {
+      var bodovi = 0;
+
+      var dopunaOdgovori = {
+        q1: ['gibanja'],
+        q3: ['tromost', 'inercija', 'tromost (inercija)'],
+        q5: ['ubrzano', 'ubrzanom', 'ubrzano gibanje'],
+        q7: ['pad'],
+        q9: ['akceleracija', 'ubrzanje']
+      };
+      for (var kljuc in dopunaOdgovori) {
+        var polje = document.getElementById(kljuc + '-input');
+        if (polje) {
+          var vrijednost = polje.value.trim().toLowerCase();
+          var tocno = dopunaOdgovori[kljuc].some(function (t) {
+            return vrijednost.indexOf(t) !== -1 && vrijednost.length > 0;
+          });
+          if (tocno) bodovi++;
+        }
+      }
+
+      var mcTocni = { q2: 'a', q4: 'c', q6: 'c', q8: 'b', q10: 'b' };
+      for (var pitanje in mcTocni) {
+        var odabran = document.querySelector('input[name="' + pitanje + '"]:checked');
+        if (odabran && odabran.value === mcTocni[pitanje]) bodovi++;
+      }
+
+      var q11polje = document.getElementById('q11-input');
+      if (q11polje) {
+        var q11vrijednost = q11polje.value.trim().replace(',', '.');
+        var q11broj = parseFloat(q11vrijednost);
+        if (!isNaN(q11broj) && Math.abs(q11broj - 2.86) < 0.15) bodovi++;
+      }
+
+      var ocjena = '';
+      if (bodovi >= 10) ocjena = 'Izvrstan (5)';
+      else if (bodovi >= 8) ocjena = 'Vrlo dobar (4)';
+      else if (bodovi >= 6) ocjena = 'Dobar (3)';
+      else if (bodovi >= 4) ocjena = 'Dovoljan (2)';
+      else ocjena = 'Nedovoljan (1)';
+
+      var rezultat = document.getElementById('rezultat');
+      rezultat.querySelector('.broj-bodova').textContent = bodovi + ' / 11';
+      rezultat.querySelector('.grade').textContent = ocjena;
+      rezultat.classList.remove('show');
+      void rezultat.offsetWidth;
+      rezultat.classList.add('show');
+      rezultat.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>        <li><a href="kviz.html" class="active">4. Kviz znanja</a></li>
         <li><a href="tekst-i-linkovi.html">5. Tekst i linkovi</a></li>
         <li><a href="pojmovnik.html">6. Pojmovnik</a></li>
       </ul>
